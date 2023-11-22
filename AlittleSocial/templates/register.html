@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section>
+        <div class="auth-container">
+            <h2>Register</h2>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input value="Register" type="submit">
+            </form>
+        </div>
+    </section>
+{% endblock body %}

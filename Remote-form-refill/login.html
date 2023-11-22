@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+    <!-- CSS only -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        body{
+            font-family:monospace;
+        }
+        #overall-container{
+            display:flex;
+            justify-content:center;
+        }
+        #email-entry,#password-entry,#email-onbehalf-entry{
+            width:300px;
+        }
+        #authentication-form,#ask-fill-onbehalf{
+            margin-top:10%;
+            margin-left:20px;
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
+        #info-container-fill-onbehalf{
+            background-color:rgb(93, 94, 95);
+            color:white;
+            max-width:300px;
+            border-radius:10px;
+            padding:10px;
+        }
+        #asktofill-onbehalf-btn{
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="overall-container">
+        <div id="authentication-form">
+            <div>
+                <label for="email-entry" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email-entry" placeholder="name@example.com" name="email">
+            </div>
+            
+            <div>
+                <label for="password-entry" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password-entry" placeholder="thisismypassword" name="password">
+            </div>
+            
+            <button id="login-btn" class="btn btn-primary">Login</button>
+        </div>
+        <div id="ask-fill-onbehalf">
+            <div>
+                <p style="max-width:300px;font-weight:bolder;">
+                    Hey, want someone to fill 
+                    this form on your behalf ? ... 
+                    
+                </p>
+                
+                <label for="email-onbehalf-entry" class="form-label">Enter their email right here..</label>
+                <input type="email" class="form-control" id="email-onbehalf-entry" placeholder="Right Here.." name="email-fill-onbehalf">
+            </div>
+            <p id="info-container-fill-onbehalf">
+                We will send an email with this form 
+                link and tell them that you ask for 
+                their help in filling out this form
+            </p>
+            <button id="asktofill-onbehalf-btn" class="btn btn-primary">Ask to fill</button>
+        </div>
+    </div>
+      
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+</body>
+</html>

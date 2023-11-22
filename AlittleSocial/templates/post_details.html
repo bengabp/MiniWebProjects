@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section class="main-content">
+        <div class="post-details">
+            <span class="bg-color">{{post.title}}</span>
+            <p>{{post.body}}</p>
+        </div>
+        <div class="comments">
+            <div class="new-comment-container">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <textarea name="comment" placeholder="Enter comment .."></textarea>
+                    <input type="submit" value="Comment" class="action-btn">
+                </form>
+            </div>
+            <hr>
+            {% if comments %}
+                <ul id="comments">
+                    {% for comment in comments %}
+                        <li class="single-comment">
+                            <span>@{{comment.author.username}}</span>
+                            <p>{{comment.body}}</p
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2>Be the first to comment !</h2>
+            {% endif %}
+                
+        </div>
+    </section>
+{% endblock body %}

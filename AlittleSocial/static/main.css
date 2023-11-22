@@ -1,0 +1,140 @@
+body{
+    /* background-color:red; */
+    font-family: monospace;
+    font-size:1.2rem;
+}
+
+.all-posts-container ul{
+    padding: 20px;
+    background-color: #eaebe4;
+    /* margin: 10px; */
+    list-style: none;
+    border-radius:10px;
+}
+
+
+
+.create-post-container{
+    padding: 20px;
+    background-color: #eaebe4;
+    border-radius: 10px;
+}
+
+.create-post-container form{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.action-btn{
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #007effd6;
+    border-radius: 10px;
+    max-width: max-content;
+    min-width: 150px;
+    height: 40px;
+    transition:0.3s;
+}
+.action-btn:hover{
+    background-color: #0080ff9c;
+    cursor:pointer;
+}
+
+.input-title{
+    max-width:500px;
+    padding:10px;
+    outline:none;
+    border:none;
+    font-family:monospace;
+    border-radius:10px;
+}
+
+.post-item{
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    border: 1px solid #c1b7b71c;
+}
+
+.post-item:hover{
+    box-shadow: -1px 4px 9px 3px #dfd5d5;
+    cursor:pointer;
+}
+
+.bg-color{
+    /* background-color: #2d6ecf4d; */
+    color: #205fd5;
+    padding: 3px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    }
+
+textarea{
+    min-height:100px;
+    min-width:300px;
+    padding:20px;
+    outline:none;
+    border:none;
+    border-radius:10px;
+    resize:none;
+}
+
+a{
+    text-decoration-thickness: 2px;
+    text-decoration-color: #205fd5;
+}
+
+.post-details span.bg-color{
+    /* background-color: #2d6ecf4d; */
+    color: #205fd5;
+    background-color:transparent;
+    padding: 3px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration-line: underline;
+}
+
+.main-content{
+    padding:20px;
+}
+
+.single-comment{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    background-color: #145e6e26;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.single-comment span{
+    font-weight:bold;
+}
+
+.single-comment p{
+    margin:0;
+    padding:10px;
+}
+
+#comments{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.new-comment-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-comment-container textarea{
+    background-color: #9fb8c138;
+    padding: 10px 150x;
+}

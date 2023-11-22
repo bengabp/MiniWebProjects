@@ -1,0 +1,23 @@
+{
+  "name": "express_apis",
+  "version": "1.0.0",
+  "description": "All my Express Apis",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Apis"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@stewartmcgown/grammarly-api": "^1.1.2",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}

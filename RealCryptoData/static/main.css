@@ -1,0 +1,122 @@
+body{
+    cursor: pointer;
+    margin:0;
+    color: #233347;
+    font-family:"Outfit",sans-serif;
+    background-color:white;
+    user-select: none;
+}
+
+#header-image{
+    width:100%;
+    max-height: 550px;
+    
+}
+
+#header-title{
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    font-size: 1.2rem;
+    color: aliceblue;
+    border-bottom: 2px solid rgb(214, 157, 50);
+    padding:5px;
+    border-radius: 10px;
+}
+
+.service{
+    margin-bottom: 10px;
+}
+
+#services-list{
+    list-style-type: symbols('.');
+    font-size: 1.2rem;
+    border-left: black solid 3px;
+    margin-left:10px;
+}
+
+#top-crypto-title{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#top-crypto-grid{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 25% auto auto 25%;
+    grid-gap: 10px 10px;
+}
+
+
+.crypto-tile{
+    border:2px solid rgba(15, 15, 17, 0.186);
+    border-radius: 20px;
+    text-align: center;
+    background-color:white;
+    color:#233347;
+}
+
+.crypto-tile:hover{
+    background-color: rgba(230, 198, 163, 0.83);
+    color:black;
+    transition:300ms;
+}
+
+@media (max-width:800px) {
+   #top-crypto-grid{
+       grid-template-columns: 50% 50%;
+       padding-left: 15px;
+       padding-right: 15px;
+   } 
+}
+
+@media (max-width:400px) {
+    #top-crypto-grid{
+        grid-template-columns: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    } 
+ }
+
+.crypto-symbol{
+    position: relative;
+    top:-5px;
+    left:10px;
+    border: 2px solid #233347;
+    border-radius: 10px;
+    background-color: #bccadc;
+    color: black;
+    padding:3px;
+    width: min-content;
+}
+
+.crypto-name{
+    font-size: 1.5rem;
+}
+
+.crypto-price{
+    font-size: 2rem;
+
+}
+
+.percent-change1h{
+    font-size: 1.2rem;
+    position: relative;
+    width: max-content;
+    left: 10px;
+    border-radius: 10px;
+    color:#233347;
+    padding:3px;
+
+}
+
+#reload-btn{
+    width: 3.5rem;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+}

@@ -1,0 +1,505 @@
+/* GENERAL RULES */
+:root{
+
+    --background-color:white;
+    --panel-color:black;
+    --generic-red-color:rgb(216, 37, 37);
+    --generic-text-color:black;
+    --panel-text-color:white;
+    --border-radius-small:10px;
+    --generic-red-hover-color:rgb(255, 2, 2);
+}
+
+
+body{
+    display:flex;
+    flex-direction:column;
+    color:var(--generic-text-color);
+    cursor: pointer;
+    user-select: none;
+    font-family: 'DynaPuff', cursive;
+    background: rgb(170, 13, 13);
+    background: -moz-linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    background: -webkit-linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    background: linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#383737",endColorstr="#e32020",GradientType=1);
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    opacity:0.5;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+    opacity:0.5;
+}
+
+
+input{
+    margin-right:5px;
+    margin-bottom:10px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.247);
+    outline:none;
+    padding-left:10px;
+    padding-right:10px;
+    color:white;
+    
+}
+
+
+/*  HEADER RULES */
+header{
+    position:fixed;
+    /* From https://css.glass */
+    background: rgba(255, 254, 254, 0.36);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    color:var(--panel-text-color);
+    width:100%;
+    z-index:9999;
+}
+
+
+header div{
+    display:flex;
+    flex-direction:row;
+    padding:5px;
+    justify-content: space-between;
+}
+
+header div#logo{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    gap:10px;
+    
+}
+
+header #upload-btn{
+    background-color:var(--generic-red-color);
+    border-radius:var(--border-radius-small);
+    display:flex;
+    flex-direction:row;
+    padding:15px;
+    margin:5px;
+    align-self: center;
+    gap:10px;
+    position:relative;
+    right:10px;
+    transition:0.2s;
+    
+}
+
+header #upload-btn:hover{
+    transform:scale3d(1.2,1.2,1.2);
+    background-color:var(--generic-red-hover-color);
+}
+
+header #logo h1{
+    margin:0;
+    align-self: center;   
+    transition: 0.2s;
+}
+
+header #logo svg{
+    align-self: center;
+    transition: 0.2s;
+}
+
+header #logo svg:hover{
+    transform:scale3d(1.2,1.2,1.2);
+}
+
+header #logo span{
+    transition: 0.2s;
+}
+
+/*  If screen width is less then 800px */
+@media only screen and (max-width:800px){
+    header #logo svg{
+        width:35px;
+        height:35px;
+        align-self: center;
+    }
+    header #upload-btn input{
+        display:none;
+    }
+
+    header #upload-btn{
+        padding:10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  BODY RULES */
+
+main{
+    width:100%;
+    background-color: transparent;
+    color:white;
+    
+}
+
+#page-main-side-content-header{
+    position:fixed;
+    z-index: 99;
+    padding:5px;
+    top:80px;
+    left:10px;
+    display:flex;
+    height:max-content;
+    flex-direction:row;
+    gap:5px;
+}
+
+#page-main-side-favourites-header{
+    position: relative;
+    padding: 17px;
+    padding-bottom: 0;
+    left: 0;
+    top: 0;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#page-main-side-by-side-container{
+    display:flex;
+    flex-direction:row;
+    position:fixed;
+    gap:10px;
+    bottom:0px;
+    top:0px;
+    padding-top:80px;
+    padding-bottom:30px;
+    width:100%;
+    background: rgb(170, 13, 13);
+    background: -moz-linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    background: -webkit-linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    background: linear-gradient(138deg, rgba(56,55,55,1) 0%, rgba(227,32,32,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#383737",endColorstr="#e32020",GradientType=1);
+}
+
+#page-main-side-content{
+    overflow-y: scroll;
+    overflow-x:hidden;
+    padding:10px;
+    margin-top:70px;
+    width:70%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    filter:blur(0px);
+}
+
+div.item{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    border:2px solid white;
+    padding:10px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 1s ease-in-out;
+}
+
+
+.item-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom:5px;
+    gap:10px;
+}
+
+
+.item-body{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.item-body div{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    align-items:center;
+    transition:0.2s;
+}
+
+.item-body div:hover{
+    transform:scale3d(1.1,1.2,1.2);
+}
+
+.item-body label{
+    background-color:var(--generic-red-color);
+    border-radius:var(--border-radius-small);
+    padding:5px;
+    transition:0.2s;
+    height:max-content;
+}
+
+.item-body label:hover{
+    background-color:var(--generic-red-hover-color);
+    box-shadow: 0 12px 16px 0 rgba(185, 183, 183, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform:scale3d(1.1,1.2,1.2);
+}
+
+.item-footer{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+
+
+
+#page-main-side-favourites{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:0px;
+    margin-right:5px;
+    max-height:600px;
+    transform:translateY(0%);
+    transition:0.5s;
+}
+
+
+#page-main-side-content::-webkit-scrollbar,#page-main-side-favourites::-webkit-scrollbar{
+    background-color:transparent;
+    padding:10px;
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#page-main-side-content::-webkit-scrollbar-thumb,#page-main-side-favourites::-webkit-scrollbar-thumb{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(200px);
+    border-radius:10px;
+    margin:5px;
+}
+
+.no-files{
+    position: relative;
+    top: 30%;
+    text-align: center;
+    font-size:2rem;
+}
+
+.page-header-lower{
+    position: fixed;
+    top: 93px;
+    padding: 5px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#display-fav-btn{
+    display:none;
+}
+/* If screen width is less than 600px */
+@media only screen and (max-width:600px){
+    #page-main-side-content-header input{
+        margin-right:5px;
+        margin-bottom:10px;
+        max-width:150px;
+    }
+
+    .item-header span:nth-child(1){
+        max-width: 200px;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+.page-header-lower input,.page-header-lower .menu-btn{
+    height:40px;
+}
+
+/*  If screen width is less then 800px */
+@media only screen and (max-width:800px){
+    /* #page-main-side-favourites{
+        display:none;
+    }
+    #page-main-side-content{
+        width:100%;
+    } */
+    #page-main-side-content{
+        margin-top:60px;
+    }
+    #page-main-side-content-header{
+        top:70px;
+        left:20px;
+    }
+}
+/* If screen is 1000px or less */
+@media only screen and (max-width:1000px){
+    #display-fav-btn{
+        display:flex;
+    }
+
+    #page-main-side-favourites{
+        position: fixed;
+        background-color: #6c191929;
+        z-index: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 70%;
+        box-shadow: 0px 0px 1px 0px #520d0d38;
+        transform:translateY(130%);
+        transition:0.3s;
+    }
+
+    #page-main-side-content{
+        width:100%;
+        
+    }
+}
+
+
+/* *If screen is 1000px or more */
+
+
+
+
+
+
+
+/*  FOOTER RULES */
+footer{
+    position:fixed;
+    bottom:0;
+    color:var(--panel-text-color);
+    width:100%;
+    justify-content: center;
+    display:flex;
+    transition:0.5s;
+    
+}
+
+footer div#btn-menu{
+    display:flex;
+    flex-direction:row;
+    padding:10px;
+    justify-content: space-around;
+    gap:30px;
+    /* From https://css.glass */
+    background: rgba(255, 254, 254, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    margin-bottom:20px;
+}
+
+div.menu-btn{
+    background-color:var(--generic-red-color);
+    border-radius:var(--border-radius-small);
+    display:flex;
+    flex-direction:row;
+    padding:8px;
+    gap:5px;
+    align-items: center;
+    transition:0.2s;
+    
+}
+
+.menu-btn:hover{
+    background-color:var(--generic-red-hover-color);
+    box-shadow: 0 12px 16px 0 rgba(185, 183, 183, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform:scale3d(1.1,1.2,1.2);
+}
+
+a{
+}
+
+a.button-link{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+a.button-link:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*  If screen width is less then 800px */
+@media only screen and (max-width:800px){
+    footer{
+        position:fixed;
+        bottom:0;
+        flex-direction:row;
+        
+    }
+
+    footer div#btn-menu{
+        display:flex;
+        flex-direction:row;
+        padding:10px;
+        justify-content: space-around;
+        gap:15px;
+        /* From https://css.glass */
+        background: rgba(255, 254, 254, 0.36);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(13.5px);
+        -webkit-backdrop-filter: blur(13.5px);
+    }
+
+    .menu-btn{
+        background-color:var(--generic-red-color);
+        display:flex;
+        flex-direction:row;
+        padding:8px;
+        gap:5px;
+        align-items: center;
+    }
+
+    .menu-btn span{
+        display:none;
+    }
+}
+

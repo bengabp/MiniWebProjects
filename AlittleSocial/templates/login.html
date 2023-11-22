@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section>
+        <div class="auth-container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input value="Login" type="submit">
+            </form>
+        </div>
+    </section>
+{% endblock body %}

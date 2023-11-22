@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section class="main-content">
+        {% if user.is_authenticated %}
+            <h2>Logged in as <span>@{{user.username}}</span></h2>
+            <div class="create-post-container">
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <input name="post-title" placeholder="Title ..." class="input-title">
+                    <textarea name="post-body" placeholder="Write something ..."></textarea>
+                    <input type="submit" value="Post" class="action-btn">
+                </form>
+            </div>
+            <div class="all-posts-container">
+                {% if posts %}
+                
+                    <ul>
+                        <h2>Posts</h2>
+                        {% for post in posts %}
+                            <li class="post-item">
+                                <div class="header">
+                                    <a href="/post/{{post.unique_id}}">
+                                        <span class="bg-color">{{post.title}}</span>
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <span>{{post.body}}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div>
+                        <h2>No posts available !</h2>
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <h2>Please <a href="/login">login</a> to access this page</h2>
+        {% endif %}
+        
+    </section>
+{% endblock body %}
